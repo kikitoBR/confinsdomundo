@@ -2,7 +2,7 @@
 name: carrossel
 description: >
   Cria carrosséis e posts visuais pra Instagram, TikTok, LinkedIn com a identidade visual da marca.
-  Gera HTML estilizado + renderiza em PNG 1080x1080 via Playwright, com legenda pronta no final.
+  Gera HTML estilizado + renderiza em PNG 1080x1350 via Playwright, com legenda pronta no final.
   Suporta carrossel texto puro, carrossel com foto IA (gerada via OpenAI) e post único.
   Use quando o usuário pedir "carrossel", "post", "conteúdo pro instagram", "criar imagem",
   "gerar foto", "post educativo", ou /carrossel.
@@ -29,18 +29,18 @@ Ao receber um pedido, identificar qual tipo se encaixa:
 
 ### 1. CARROSSEL TEXTO PURO
 - **Quando usar:** posts educacionais, dicas, listas, explicações
-- **Formato:** 1080x1080 (1:1) — sempre
+- **Formato:** 1080x1350 (4:5) — sempre
 - **Estilo:** tipografia clean, cores da marca alternadas, sem fotos
 
 ### 2. CARROSSEL COM FOTO
 - **Quando usar:** apresentação visual, conteúdo aspiracional, capa com personagem
-- **Formato:** 1080x1080 (1:1)
+- **Formato:** 1080x1350 (4:5)
 - **Estilo:** foto como capa com gradient overlay + slides internos no padrão alternado
 - **Foto:** pode ser IA (gerada por OpenAI) ou real (passada pelo usuário)
 
 ### 3. POST ÚNICO
 - **Quando usar:** frase de impacto, dado/estatística, depoimento, bastidores
-- **Formato:** 1080x1080
+- **Formato:** 1080x1350
 - **Estilo:** varia conforme o conteúdo (citação, número grande, foto com overlay)
 
 Se o tipo não estiver claro, perguntar:
@@ -205,7 +205,7 @@ Se não tiver o script ainda, instruir o usuário a configurar `OPENAI_API_KEY` 
    </div>
    ```
 
-2. Criar `render.js` na mesma pasta — script Node com Playwright que abre o HTML e tira screenshot de cada `.slide` em 1080x1080. Pode reutilizar `node_modules` de uma pasta anterior (não precisa rodar `npm install` toda vez):
+2. Criar `render.js` na mesma pasta — script Node com Playwright que abre o HTML e tira screenshot de cada `.slide` em 1080x1350. Pode reutilizar `node_modules` de uma pasta anterior (não precisa rodar `npm install` toda vez):
 ```bash
 NODE_PATH="<pasta-com-node_modules>/node_modules" node render.js
 ```
@@ -241,7 +241,7 @@ Se sim, chamar `/publicar-tema` com o mesmo tema.
 ## Regras
 
 - Sempre ler `identidade/design-guide.md` antes de criar qualquer visual
-- Carrossel: 1080x1080 (quadrado) — sempre. TikTok/Reels: 1080x1920 (9:16) — só quando pedido explicitamente
+- Carrossel: 1080x1350 (4:5 retrato) — sempre. TikTok/Reels: 1080x1920 (9:16) — só quando pedido explicitamente
 - Linguagem segue `_memoria/preferencias.md` estritamente
 - Sempre considerar a sequência de capa no feed antes de definir capa nova
 - Sempre gerar legenda automaticamente ao final, salvando em `legenda.md`

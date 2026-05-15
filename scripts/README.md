@@ -11,7 +11,7 @@ Conforme você for ativando skills, isso aqui vai sendo populado. Lista do que c
 | Skill | Script esperado | O que faz |
 |---|---|---|
 | `/carrossel` (com foto IA) | `gerar-imagem.js` | Gera foto realista via OpenAI API (DALL-E 3) |
-| `/carrossel` (render PNG) | `render.js` (gerado por carrossel, fica na pasta do conteúdo) | Playwright tira screenshot 1080x1080 de cada slide |
+| `/carrossel` (render PNG) | `render.js` (gerado por carrossel, fica na pasta do conteúdo) | Playwright tira screenshot 1080x1350 de cada slide |
 | `/aprovar-post` | `postar-instagram.js` | Publica carrossel no Instagram via Meta Graph API |
 | `/aprovar-post` | `postar-facebook.js` | Publica carrossel no Facebook via Meta Graph API |
 | `/anuncio-google` | (nenhum — gera CSV direto) | — |

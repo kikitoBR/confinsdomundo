@@ -58,7 +58,7 @@ iniciativa · `/mapear-rotinas` descobre o que você repete e transforma
 em skill personalizada.
 
 **Conteúdo e SEO** — vitrine pública da empresa
-`/carrossel` cria carrosséis 1080×1080 com identidade da marca (com ou
+`/carrossel` cria carrosséis 1080×1350 com identidade da marca (com ou
 sem foto IA) · `/publicar-tema` pega um tema e entrega artigo de blog +
 carrossel + 3 legendas amarradas · `/seo` roda fluxo completo de 8 passos
 (demanda, concorrência, GMB, on-page, conteúdo, ads, monitoramento, GEO)
