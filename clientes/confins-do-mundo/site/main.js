@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavbarScroll();
   initMobileMenu();
   initScrollParallaxHero();
-  initBookingForm();
   initDestinosCarousel();
   initDepoimentosCarousel();
 });
@@ -197,52 +196,6 @@ function initScrollParallaxHero() {
   updateScrollTarget();
 }
 
-/**
- * 3. Booking widget to WhatsApp Redirection
- */
-function initBookingForm() {
-  const form = document.getElementById('booking-form');
-  
-  if (!form) return;
-  
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    const origem = document.getElementById('origem').value;
-    const destino = document.getElementById('destino').value;
-    const dataIda = document.getElementById('data-ida').value;
-    const dataVolta = document.getElementById('data-volta').value;
-    const passageiros = document.getElementById('passageiros').value;
-    const classe = document.getElementById('classe').value;
-    
-    // Format dates to pt-BR
-    const formatDate = (dateString) => {
-      if (!dateString) return 'Não informada';
-      const [year, month, day] = dateString.split('-');
-      return `${day}/${month}/${year}`;
-    };
-
-    const idaFmt = formatDate(dataIda);
-    const voltaFmt = formatDate(dataVolta);
-    
-    // Build WhatsApp message
-    const message = `Olá, Confins do Mundo! Gostaria de solicitar uma cotação de passagem aérea com os seguintes detalhes:
-    
-✈️ *Origem:* ${origem}
-📍 *Destino:* ${destino}
-📅 *Ida:* ${idaFmt}
-🔙 *Volta:* ${voltaFmt}
-👥 *Passageiros:* ${passageiros}
-✨ *Classe:* ${classe}`;
-    
-    const encodedMessage = encodeURIComponent(message);
-    const phoneNumber = '555189505428'; // Real Confins do Mundo WhatsApp
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-    
-    // Open in a new tab
-    window.open(whatsappUrl, '_blank');
-  });
-}
 
 /**
  * 4. Mobile Hamburger Drawer Menu Toggle
@@ -547,35 +500,6 @@ function initDepoimentosCarousel() {
     startAutoplay();
   }
 
-  // Navigation Arrows Event Listeners
-  const prevBtn = document.getElementById('depoimentos-carousel-prev');
-  const nextBtn = document.getElementById('depoimentos-carousel-next');
-
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
-      if (!isMobile()) return;
-      if (currentIndex === 0) {
-        currentIndex = cards.length - 1;
-      } else {
-        currentIndex--;
-      }
-      updateCarousel();
-      resetAutoplay();
-    });
-  }
-
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
-      if (!isMobile()) return;
-      if (currentIndex >= cards.length - 1) {
-        currentIndex = 0;
-      } else {
-        currentIndex++;
-      }
-      updateCarousel();
-      resetAutoplay();
-    });
-  }
 
   // Event Listeners for Autoplay Pause/Resume on Hover
   container.addEventListener('mouseenter', stopAutoplay);
