@@ -1782,7 +1782,8 @@ section {
 
   .cta-card {
     flex-direction: column;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
     padding: 30px 24px;
     gap: 25px;
   }
@@ -1803,7 +1804,7 @@ section {
   }
 
   .footer-brand .logo {
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .footer-brand-desc {
@@ -1817,17 +1818,17 @@ section {
 
   .footer-links a,
   .footer-contact-item {
-    margin: 0 auto;
+    margin: 0;
   }
 
   .footer-bottom-layout {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
     gap: 20px;
   }
 
   .footer-cadastur {
-    align-items: center;
+    align-items: flex-start;
   }
 }
