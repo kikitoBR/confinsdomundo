@@ -87,11 +87,11 @@ function initScrollParallaxHero() {
     // 2. Compute airplane position, scale, rotation and opacity
     const currentPt = getPathCoords(currentPercentage);
 
-    // Extreme zoom: starts at 1.8 (larger) and increases to 20.0 (massive)
-    const scale = 1.8 + Math.pow(currentPercentage, 2.5) * 18.2;
+    // Extreme zoom: starts at 1.8 (larger) and increases to 45.0 (massive zoom-in bypass)
+    const scale = 1.8 + Math.pow(currentPercentage, 2.0) * 43.2;
 
-    // Fade out as it passes the viewer (from 0.75 to 1.0 scroll)
-    const opacity = currentPercentage > 0.75 ? Math.max(0, 1 - (currentPercentage - 0.75) / 0.25) : 1;
+    // Fade out as it passes very close to the viewer (from 0.70 to 1.0 scroll)
+    const opacity = currentPercentage > 0.70 ? Math.max(0, 1 - (currentPercentage - 0.70) / 0.30) : 1;
 
     // Use original image angle (0deg base) with a very subtle roll wiggle
     const wiggle = Math.sin(currentPercentage * Math.PI * 2) * 1.5;
